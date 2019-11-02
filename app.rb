@@ -5,7 +5,7 @@ get '/' do
 end
 
 get '/endpoint' do
-	'New Endpoint!'
+	'This is New Endpoint!'
 end
 
 get '/health_check' do
