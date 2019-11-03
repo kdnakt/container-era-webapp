@@ -98,4 +98,9 @@ workflows:
           filters:
             branches:
               only: master
-      - deploy
+      - deploy:
+          requires:
+            - build_image
+          filters:
+            branches:
+              only: master
