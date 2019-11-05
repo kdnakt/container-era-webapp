@@ -4,6 +4,10 @@ ENV APP_ROOT /app
 
 WORKDIR $APP_ROOT
 
+# install mysql client
+RUN apt-get update && apt-get install -y default-mysql-client \
+  --no-install-recommends && rm -rf /var/lib/apt/lists/*
+
 ADD Gemfile $APP_ROOT
 ADD Gemfile.lock $APP_ROOT
 
