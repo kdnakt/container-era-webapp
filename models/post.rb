@@ -2,7 +2,7 @@ require "active_record"
 require "mysql2"
 
 ActiveRecord::Base.configurations = {
-  Env['RACK_ENV'] => {
+  ENV['RACK_ENV'] => {
     adapter: "mysql2",
     host: ENV['DB_HOST'],
     username: ENV['DB_USER'],
