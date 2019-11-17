@@ -85,7 +85,7 @@ jobs:
           name: deploy
           command: |
             aws ecs describe-task-definition --task-definition webapp-service | jq '.taskDefinition | { containerDefinitions: .containerDefinitions }' > def.json
-            aws ecs register-task-definition --family webapp-service --cli-input-json file://def.json
+            aws ecs register-task-definition --family webapp-service --execution-role-arn arn:aws:iam::195905244530:role/ecs_task_role --cli-input-json file://def.json
             aws ecs update-service --cluster sample-ecs-cluster --service webapp-service --task-definition webapp-service
 workflows:
   version: 2
