@@ -18,7 +18,7 @@ RUN \
 
 ADD . $APP_ROOT
 
-EXPOSE 4566
+EXPOSE 4567
 
 CMD ["bundle", "exec", "ruby", "app.rb", "-o", "0.0.0.0"]
 
